@@ -1,4 +1,7 @@
+---
+
 - name: Install Git
+  hosts: all
   ansible.builtin.package:
     name: git
     state: present
