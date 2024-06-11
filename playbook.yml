@@ -1,0 +1,24 @@
+- name: Install Git
+  hosts: slave
+  become: yes
+  tasks:
+    - name: Install Git
+      package:
+        name: git
+        state: present
+- name: Install Python
+  hosts: slave
+  become: yes
+  tasks:
+    - name: Install Python
+      package:
+        name: python
+        state: present
+- name: Install PostgreSQL
+  hosts: slave
+  become: yes
+  tasks:
+    - name: Install PostgreSQL
+      package:
+        name: postgresql
+        state: present
