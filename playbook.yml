@@ -1,7 +1,10 @@
 ---
 
-- name: Install Git
+- name: Prepare the server for running the Python software
+  gather_facts: false
   hosts: all
-  ansible.builtin.package:
-    name: git
-    state: present
+  tasks:
+    - name: Install Git
+      ansible.builtin.package:
+        name: git
+        state: present
