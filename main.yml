@@ -1,0 +1,4 @@
+---
+- include_tasks: playbook.yml
+- include_tasks: python-pip.yml
+- include_tasks: postgresql-setup.yml
