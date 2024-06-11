@@ -1,6 +1,7 @@
 ---
 
 - name: Install required packages
+  become_user: root
   gather_facts: false
   hosts: localhost
   tasks:
