@@ -4,7 +4,7 @@
   gather_facts: false
   hosts: localhost
   pre_tasks:
-  
+
     - name: Install Git
       ansible.builtin.apt:
         name: git
@@ -26,10 +26,6 @@
         path: "/var/lib/pgsql/data/pg_hba.conf"
       register: postgres_data
 
-    - name: "Initialize PostgreSQL"
-      shell: "postgresql-setup initdb"
-      when: not postgres_data.stat.exists
- 
     - name: "Start and enable services"
       service: "name={{ item }} state=started enabled=yes"
       with_items:
