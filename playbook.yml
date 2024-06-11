@@ -3,9 +3,9 @@
 - name: Install required packages
   gather_facts: false
   hosts: localhost
-  become_user: root
   tasks:
     - name: Install Git
+      become_user: root
       ansible.builtin.package:
         name: git
         state: present
