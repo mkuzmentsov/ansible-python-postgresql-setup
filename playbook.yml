@@ -8,3 +8,7 @@
       ansible.builtin.package:
         name: git
         state: present
+    - name: Install Python3
+      ansible.builtin.package:
+        name: python3
+        state: present
