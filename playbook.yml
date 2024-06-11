@@ -1,18 +1,4 @@
 - name: Install Git
-  tasks:
-    - name: Install Git
-      package:
-        name: git
-        state: present
-- name: Install Python
-  tasks:
-    - name: Install Python
-      package:
-        name: python
-        state: present
-- name: Install PostgreSQL
-  tasks:
-    - name: Install PostgreSQL
-      package:
-        name: postgresql
-        state: present
+  ansible.builtin.package:
+    name: git
+    state: present
