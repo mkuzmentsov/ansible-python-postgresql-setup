@@ -10,6 +10,6 @@ Steps to run:
 
 ```
 cd ~
-ansible-pull -U -K https://github.com/mkuzmentsov/ansible-python-postgresql-setup.git playbook.yml
+ansible-pull -U https://github.com/mkuzmentsov/ansible-python-postgresql-setup.git playbook.yml -K
 ```
 

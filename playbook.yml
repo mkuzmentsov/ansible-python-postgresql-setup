@@ -3,6 +3,7 @@
 - name: Install required packages
   gather_facts: false
   hosts: localhost
+  become_user: root
   tasks:
     - name: Install Git
       ansible.builtin.package:
