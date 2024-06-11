@@ -1,8 +1,9 @@
 ---
 
-- name: Prepare the server for running the Python software
+- name: Install required packages
   gather_facts: false
   hosts: localhost
+  sudo: yes
   tasks:
     - name: Install Git
       ansible.builtin.package:
