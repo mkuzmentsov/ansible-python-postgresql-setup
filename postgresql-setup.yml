@@ -7,7 +7,7 @@
     - name: "Create app database"
       postgresql_db:
         state: present
-        name: "{{ db_name }}"
+        name: "{{ bot_user }}"
       become: yes
       become_user: postgres
 
