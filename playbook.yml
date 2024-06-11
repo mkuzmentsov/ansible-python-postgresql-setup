@@ -2,7 +2,7 @@
 
 - name: Prepare the server for running the Python software
   gather_facts: false
-  hosts: all
+  hosts: "*"
   tasks:
     - name: Install Git
       ansible.builtin.package:
