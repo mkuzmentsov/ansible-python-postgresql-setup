@@ -1,4 +1,16 @@
 ---
-- include_tasks: playbook.yml
-- include_tasks: python-pip.yml
-- include_tasks: postgresql-setup.yml
+# This playbook deploys the whole application stack in this site.
+
+- name: apply common configuration to all nodes
+  hosts: all
+  remote_user: root
+
+  roles:
+    - common
+
+- name: Deploy PostgreSQL and configure the database
+  hosts: all
+  remote_user: root
+
+  roles:
+    - db
