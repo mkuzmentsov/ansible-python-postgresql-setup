@@ -1,2 +1,5 @@
-os_users:
+os_groups:
   - name: tgfeedbackbot
+
+os_users:
+- name: tgfeedbackbot

@@ -1,11 +1,17 @@
-- name: Create necessary users
-  ansible.builtin.user:
+- name: Create necessary system groups
+  group:
+    name: "{{ item.name }}"
+  with_items:
+    - "{{ os_groups }}"
+
+- name: Create necessary system users
+  user:
     name: "{{ item.name }}"
   with_items:
     - "{{ os_users }}"
 
 - name: Install Python and pip
-  ansible.builtin.package:
+  package:
     name: "{{ item }}"
     state: present
   become: true
