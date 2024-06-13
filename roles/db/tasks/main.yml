@@ -1,7 +1,5 @@
 - name: PostgreSQL setup
   hosts: localhost
-  vars_files:
-    - vars/vars.yml
 
   handlers:
     - name: Restart postgresql
