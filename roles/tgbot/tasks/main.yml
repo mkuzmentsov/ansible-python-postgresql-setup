@@ -4,10 +4,8 @@
     dest: "/home/{{ os_user_name }}/tgfeedbackbotworker"
   become: true
   become_user: "{{ os_user_name }}"
-  
+
 - name: TG Bot | Create environment file
-
-
   template: src=tgfeedbackbotworker.env dest=/etc/sysconfig/tgfeedbackbotworker
 
 - name: TG Bot  | Create Unit file
