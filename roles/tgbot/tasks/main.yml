@@ -1,7 +1,19 @@
 - name: Clone a repo with separate git directory
   ansible.builtin.git:
-    repo: https://github.com/ansible/ansible-examples.git
+    repo: https://github.com/mkuzmentsov/tg-bot-with-antiflood.git
     dest: "/home/{{ os_user_name }}/tgfeedbackbotworker"
   become: true
   become_user: "{{ os_user_name }}"
   
+- name: TG Bot | Create environment file
+
+
+  template: src=tgfeedbackbotworker.env dest=/etc/sysconfig/tgfeedbackbotworker
+
+- name: TG Bot  | Create Unit file
+  template: src=tgfeedbackbotworker.service dest=/lib/systemd/system/tgfeedbackbotworker.service mode=644
+  notify:
+    - reload systemctl
+
+- name: TG Bot  | Start teamcity
+  service: name=tgfeedbackbotworker.service state=started enabled=yes

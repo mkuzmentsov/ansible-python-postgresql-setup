@@ -5,3 +5,10 @@
     - common
     - db
     - tgbot
+  vars_prompt:
+  - name: "tg_bot_token"
+    prompt: "TG_BOT_TOKEN"
+    private: yes
+  - name: "tg_forward_group_id"
+    prompt: "TG_FORWARD_GROUP_ID"
+    private: yes

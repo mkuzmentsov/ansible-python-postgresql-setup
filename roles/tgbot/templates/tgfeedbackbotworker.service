@@ -4,9 +4,6 @@ Documentation="Ooops, no docs"
 After=network.target
 
 [Service]
-Environment="CHAT_ID=?????"
-Environment="FORWARD_GROUP_ID=?????"
-Environment="DB_CONNECTION=?????"
 Type=simple
 User={{ os_user_name }}
 ExecStart=/usr/bin/python3 /home/{{ os_user_name }}/tgfeedbackbotworker/main.py
