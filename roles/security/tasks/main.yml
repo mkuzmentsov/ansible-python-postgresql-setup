@@ -1,0 +1,25 @@
+- name: Disable root login
+  lineinfile:
+    path: "{{ sshd_config_file }}"
+    regexp: "^PermitRootLogin"
+    line: "PermitRootLogin no"
+    backup: yes
+  notify: restart sshd
+
+- name: Enforce SSH key passphrases
+  lineinfile:
+    path: "{{ sshd_config_file }}"
+    regexp: "^#PermitEmptyPasswords"
+    line: "PermitEmptyPasswords no"
+    backup: yes
+  notify: restart sshd
+
+- name: Disallow SSH password authentication
+  lineinfile:
+    dest: "{{ sshd_config_file }}"
+    regexp: "^PasswordAuthentication"
+    line: "PasswordAuthentication no"
+    state: present
+    validate: sshd -t -f %s
+  notify:
+    - restart sshd
