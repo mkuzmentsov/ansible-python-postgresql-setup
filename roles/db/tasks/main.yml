@@ -4,7 +4,7 @@
     state: present
     update_cache: true
 
-- name: Start and enable the service
+- name: Start and enable the PostgreSQL service
   ansible.builtin.systemd:
     name: postgresql
     state: started
