@@ -1,5 +1,4 @@
-- name: "PostgreSQL Setup"
-  vars_files:
+- vars_files:
     - vars/vars.yml
 
   handlers:
