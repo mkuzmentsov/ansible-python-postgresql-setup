@@ -1,6 +1,8 @@
 - name: Create necessary users
   ansible.builtin.user:
-    name: "{{ os_users }}"
+    name: "{{ item.name }}"
+  with_items:
+    - "{{ os_users }}"
 
 - name: Install Python and pip
   ansible.builtin.package:
