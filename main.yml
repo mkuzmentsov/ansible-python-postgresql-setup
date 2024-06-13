@@ -3,4 +3,5 @@
   vars_files: 
     - roles/db/vars/vars.yml
   roles:
+    - common
     - db
