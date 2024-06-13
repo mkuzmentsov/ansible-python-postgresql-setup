@@ -6,3 +6,7 @@
   loop:
     - python3
     - python3-pip
+
+- name: Install psycopg2
+  ansible.builtin.pip:
+    name: psycopg2
