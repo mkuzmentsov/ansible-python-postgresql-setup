@@ -5,6 +5,15 @@
   become: true
   become_user: "{{ os_user_name }}"
 
+- name: Install dependencies
+  pip:
+    requirements: /home/{{ os_user_name }}/tgfeedbackbotworker/requirements.txt
+
+- name: Ensure directory /var/log/tgfeedbackbotworker exists
+  file:
+    path: /var/log/tgfeedbackbotworker
+    state: directory  
+    
 - name: TG Bot | Create environment file
   template: src=tgfeedbackbotworker.env dest=/etc/sysconfig/tgfeedbackbotworker
 
