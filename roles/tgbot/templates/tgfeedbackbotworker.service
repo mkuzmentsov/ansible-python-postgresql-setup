@@ -7,6 +7,8 @@ After=network.target
 Type=simple
 User={{ os_user_name }}
 ExecStart=/usr/bin/python3 /home/{{ os_user_name }}/tgfeedbackbotworker/main.py
+StandardOutput=append:/var/log/flume-ng/log1.log
+StandardError=append:/var/log/flume-ng/log2.log
 Restart=on-failure
 
 [Install]
