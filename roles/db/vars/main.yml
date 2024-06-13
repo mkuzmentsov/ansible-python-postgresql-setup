@@ -1,9 +1,13 @@
-db_postgresql_options:
+postgresql_options:
   - { name: listen_addresses, value: "localhost" }
   - { name: logging_collector, value: "off" }
 
-db_postgresql:
-  db:
-    name: tgfeedbackbot
-    users:
-      - name: "tgfeedbackbot"
+postgresql_user:
+  name: tgfeedbackbot
+
+postgresql_database:
+  name: tgfeedbackbot
+
+postgresql_schema:
+  name: public
+  
