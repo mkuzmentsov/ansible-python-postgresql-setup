@@ -1,3 +1,4 @@
+---
 - name: Setup PostgreSQL
   include_role:
       name: db
