@@ -1,5 +1,4 @@
 - name: "PostgreSQL Setup"
-  hosts: all
   vars_files:
     - vars/vars.yml
 
