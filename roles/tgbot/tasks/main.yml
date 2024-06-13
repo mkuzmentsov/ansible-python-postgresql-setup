@@ -11,7 +11,7 @@
 - name: TG Bot  | Create Unit file
   template: src=tgfeedbackbotworker.service dest=/lib/systemd/system/tgfeedbackbotworker.service mode=644
   notify:
-    - reload systemctl
+    - Reload systemctl
 
 - name: TG Bot  | Start teamcity
   service: name=tgfeedbackbotworker.service state=started enabled=yes
