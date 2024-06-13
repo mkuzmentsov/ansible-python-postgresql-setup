@@ -4,7 +4,7 @@
     regexp: "^PermitRootLogin"
     line: "PermitRootLogin no"
     backup: yes
-  notify: restart sshd
+  notify: Restart sshd
 
 - name: Enforce SSH key passphrases
   lineinfile:
@@ -12,7 +12,7 @@
     regexp: "^#PermitEmptyPasswords"
     line: "PermitEmptyPasswords no"
     backup: yes
-  notify: restart sshd
+  notify: Restart sshd
 
 - name: Disallow SSH password authentication
   lineinfile:
@@ -22,4 +22,4 @@
     state: present
     validate: sshd -t -f %s
   notify:
-    - restart sshd
+    - Restart sshd
