@@ -16,7 +16,7 @@
     value: "{{ item.value }}"
   become: true
   become_user: postgres
-  with_items: "{{ postgresql_options }}"
+  with_items: "{{ db_postgresql_options }}"
   notify:
     - Restart postgresql
 
