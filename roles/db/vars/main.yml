@@ -4,4 +4,6 @@ db_postgresql_options:
 
 db_postgresql:
   db:
-    name:
+    name: tgfeedbackbot
+    users:
+      - name: "tgfeedbackbot"

@@ -20,23 +20,23 @@
   notify:
     - Restart postgresql
 
-# - name: Create the databases
-#   community.postgresql.postgresql_db:
-#     name: "{{ postgresql.db.name }}"
-#     encoding: "UTF-8"
-#   become: true
-#   become_user: postgres
+- name: Create the databases
+  community.postgresql.postgresql_db:
+    name: "{{ postgresql.db.name }}"
+    encoding: "UTF-8"
+  become: true
+  become_user: postgres
 
-# - name: Create the users
-#   community.postgresql.postgresql_user:
-#     db: "{{ item.db }}"
-#     name: "{{ item.name }}"
-#     password: "{{ item.password | default(omit) }}"
-#   become: true
-#   become_user: postgres
-#   environment:
-#     PGOPTIONS: "-c password_encryption=scram-sha-256"
-#   with_items: "{{ postgresql_users }}"
+- name: Create the users
+  community.postgresql.postgresql_user:
+    db: "{{ item.db }}"
+    name: "{{ item.name }}"
+    password: "{{ item.password | default(omit) }}"
+  become: true
+  become_user: postgres
+  environment:
+    PGOPTIONS: "-c password_encryption=scram-sha-256"
+  with_items: "{{ db_postgresql.db.users }}"
 
 # - name: Create the schemas
 #   community.postgresql.postgresql_schema:
