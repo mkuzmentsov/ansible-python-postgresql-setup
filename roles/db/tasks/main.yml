@@ -10,15 +10,15 @@
     state: started
     enabled: true
 
-# - name: Set options
-#   community.postgresql.postgresql_set:
-#     name: "{{ item.name }}"
-#     value: "{{ item.value }}"
-#   become: true
-#   become_user: postgres
-#   with_items: "{{ postgresql_options }}"
-#   notify:
-#     - Restart postgresql
+- name: Set options
+  community.postgresql.postgresql_set:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+  become: true
+  become_user: postgres
+  with_items: "{{ postgresql_options }}"
+  notify:
+    - Restart postgresql
 
 # - name: Create the databases
 #   community.postgresql.postgresql_db:
