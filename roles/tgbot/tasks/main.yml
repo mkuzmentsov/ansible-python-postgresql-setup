@@ -1,6 +1,7 @@
 - name: Clone a repo with separate git directory
   ansible.builtin.git:
     repo: https://github.com/ansible/ansible-examples.git
-    dest: "/home/{{ os_user_name }}/sourcecode"
+    dest: "/home/{{ os_user_name }}/tgfeedbackbotworker"
   become: true
   become_user: "{{ os_user_name }}"
+  

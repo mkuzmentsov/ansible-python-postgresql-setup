@@ -1,0 +1,16 @@
+[Unit]
+Description=Telegram Feedback Bot Service
+Documentation="Ooops, no docs"
+After=network.target
+
+[Service]
+Environment="CHAT_ID=?????"
+Environment="FORWARD_GROUP_ID=?????"
+Environment="DB_CONNECTION=?????"
+Type=simple
+User={{ os_user_name }}
+ExecStart=/usr/bin/python3 /home/{{ os_user_name }}/tgfeedbackbotworker/main.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
