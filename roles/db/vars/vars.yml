@@ -1,7 +1,7 @@
-postgresql_options:
-  - { name: listen_addresses,  value: "localhost" }
+db_postgresql_options:
+  - { name: listen_addresses, value: "localhost" }
   - { name: logging_collector, value: "off" }
 
-postgresql:
+db_postgresql:
   db:
     name:
