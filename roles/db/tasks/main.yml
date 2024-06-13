@@ -22,14 +22,14 @@
 
 - name: Create the databases
   community.postgresql.postgresql_db:
-    name: "{{ postgresql.db.name }}"
+    name: "{{ db_postgresql.db.name }}"
     encoding: "UTF-8"
   become: true
   become_user: postgres
 
 - name: Create the users
   community.postgresql.postgresql_user:
-    db: "{{ item.db }}"
+    db: "{{ db_postgresql.db.name }}"
     name: "{{ item.name }}"
     password: "{{ item.password | default(omit) }}"
   become: true
