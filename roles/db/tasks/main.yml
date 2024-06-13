@@ -1,6 +1,6 @@
 - name: Install PostgreSQL
   ansible.builtin.package:
-    name: postgresql-server, postgresql-contrib
+    name: postgresql, postgresql-contrib
     state: present
     update_cache: true
 
