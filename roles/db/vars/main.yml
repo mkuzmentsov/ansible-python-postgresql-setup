@@ -1,6 +1,4 @@
-postgresql_version: 14
-
-pg_hba_conf_location: "/etc/postgresql/14/main/pg_hba.conf"
+pg_hba_conf_location: "/etc/postgresql/15/main/pg_hba.conf"
 
 postgresql_options:
   - { name: listen_addresses, value: "localhost" }
