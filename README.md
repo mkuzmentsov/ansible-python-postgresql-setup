@@ -5,11 +5,15 @@ Prerequisites:
 
 - ansible
 
+```
+sudo apt-get install -y ansible
+```
+
 
 Steps to run:
 
 ```
 cd ~
-ansible-pull -vv -U https://github.com/mkuzmentsov/ansible-python-postgresql-setup.git main.yml
+sudo ansible-pull -U https://github.com/mkuzmentsov/ansible-python-postgresql-setup.git main.yml
 ```
 
