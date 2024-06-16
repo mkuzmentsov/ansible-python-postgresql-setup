@@ -26,11 +26,3 @@
   file:
     path: /etc/sysconfig
     state: directory
-
-- name: Ensure the locale exists
-  locale_gen:
-    name: C.UTF-8
-    state: present
-
-- name: set as default locale
-  command: localectl set-locale LANG=C.UTF-8 LC_ALL=C.UTF-8
