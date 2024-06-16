@@ -10,6 +10,10 @@
   with_items:
     - "{{ os_users }}"
 
+- name: Update package cache
+  ansible.builtin.package:
+    update_cache: true
+    
 - name: Install Python and pip
   package:
     name: "{{ item }}"
