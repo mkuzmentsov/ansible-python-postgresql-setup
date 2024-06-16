@@ -31,7 +31,7 @@
   community.postgresql.postgresql_user:
     db: "{{ postgresql_database.name }}"
     name: "{{ postgresql_user.name }}"
-    password: "{{ postgresql_user.password | default(omit) }}"
+    password: "{{ postgresql_user_password | default(omit) }}"
   become: true
   become_user: postgres
   environment:
