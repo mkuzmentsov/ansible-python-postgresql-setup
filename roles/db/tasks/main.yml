@@ -45,10 +45,10 @@
   become: true
   become_user: postgres
 
-- name: Configure access to db for user
-  community.postgresql.postgresql_pg_hba:
-    dest: "{{ pg_hba_conf_location }}"
-    contype: local
-    users: "{{ postgresql_user.name }}"
-    databases: "{{ postgresql_database.name }}"
-    method: trust
+# - name: Configure access to db for user
+#   community.postgresql.postgresql_pg_hba:
+#     dest: "{{ pg_hba_conf_location }}"
+#     contype: local
+#     users: "{{ postgresql_user.name }}"
+#     databases: "{{ postgresql_database.name }}"
+#     method: trust
