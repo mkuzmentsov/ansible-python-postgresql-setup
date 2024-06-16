@@ -22,16 +22,16 @@
 
 - name: Create the databases
   community.postgresql.postgresql_db:
-    name: "{{ postgresql_database.name }}"
+    name: "{{ postgresql_database_name }}"
     encoding: "UTF-8"
   become: true
   become_user: postgres
 
 - name: Create the users
   community.postgresql.postgresql_user:
-    db: "{{ postgresql_database.name }}"
-    name: "{{ postgresql_user.name }}"
-    password: "{{ postgresql_user_password | default(omit) }}"
+    db: "{{ postgresql_database_name }}"
+    name: "{{ postgresql_user_name }}"
+    password: "{{ postgresql_user_password }}"
   become: true
   become_user: postgres
   environment:
@@ -39,9 +39,9 @@
 
 - name: Create the schemas
   community.postgresql.postgresql_schema:
-    db: "{{ postgresql_database.name }}"
-    name: "{{ postgresql_schema.name }}"
-    owner: "{{ postgresql_user.name }}"
+    db: "{{ postgresql_database_name }}"
+    name: "{{ postgresql_schema_name }}"
+    owner: "{{ postgresql_user_name }}"
   become: true
   become_user: postgres
 
