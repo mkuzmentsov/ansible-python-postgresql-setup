@@ -6,7 +6,7 @@ After=network.target
 [Service]
 Type=simple
 User={{ os_user_name }}
-ExecStart=/usr/bin/python3 /home/{{ os_user_name }}/tgfeedbackbotworker/main.py
+ExecStart=//home/{{ os_user_name }}/tgfeedbackbotworker/venv/bin/python3 /home/{{ os_user_name }}/tgfeedbackbotworker/main.py
 StandardOutput=append:/var/log/tgfeedbackbotworker/out.log
 StandardError=append:/var/log/tgfeedbackbotworker/error.log
 Restart=on-failure
