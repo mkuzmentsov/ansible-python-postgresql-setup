@@ -10,6 +10,8 @@
   pip:
     virtualenv: /home/{{ os_user_name }}/tgfeedbackbotworker/venv
     requirements: /home/{{ os_user_name }}/tgfeedbackbotworker/requirements.txt
+  become: true
+  become_user: "{{ os_user_name }}"
 
 - name: Ensure directory /var/log/tgfeedbackbotworker exists
   file:
