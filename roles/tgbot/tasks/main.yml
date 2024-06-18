@@ -26,5 +26,5 @@
   notify:
     - Reload systemctl
 
-- name: TG Bot  | Start teamcity
-  service: name=tgfeedbackbotworker.service state=started enabled=yes
+- name: TG Bot  | Start service
+  service: name=tgfeedbackbotworker.service state=stopped enabled=yes
