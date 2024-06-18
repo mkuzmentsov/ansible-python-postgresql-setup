@@ -5,13 +5,17 @@
   become: true
   become_user: "{{ os_user_name }}"
 
-
 - name: Install dependencies
   pip:
     virtualenv: /home/{{ os_user_name }}/tgfeedbackbotworker/venv
     requirements: /home/{{ os_user_name }}/tgfeedbackbotworker/requirements.txt
   become: true
   become_user: "{{ os_user_name }}"
+
+- name: Ensure directory /etc/sysconfig exists
+  file:
+    path: /etc/sysconfig
+    state: directory
 
 - name: Ensure directory /var/log/tgfeedbackbotworker exists
   file:

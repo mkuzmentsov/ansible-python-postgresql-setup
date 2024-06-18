@@ -3,3 +3,9 @@ os_groups:
 
 os_users:
 - name: tgfeedbackbot
+
+python_release: 3.11.6
+
+python_src_dir: /tmp
+python_archive: Python-{{ python_release }}.tgz
+python_url: "https://www.python.org/ftp/python/{{ python_release }}/{{ python_archive }}"
