@@ -1,8 +1,8 @@
 - hosts: localhost
   gather_facts: false
   roles:
-    - security
     - common
+    - security
     - db
     - tgbot
   vars_prompt:
