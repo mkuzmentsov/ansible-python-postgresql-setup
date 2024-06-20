@@ -1,0 +1,12 @@
+- name: Create necessary system groups
+  group:
+    name: "{{ item.name }}"
+  with_items:
+    - "{{ os_groups }}"
+
+- name: Create necessary system users
+  user:
+    name: "{{ item.name }}"
+    shell: "/bin/bash"
+  with_items:
+    - "{{ os_users }}"

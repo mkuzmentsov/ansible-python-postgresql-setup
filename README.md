@@ -3,13 +3,10 @@ Playbook project with Ansible-based Python+PostgreSQL setup
 
 Prerequisites:
 
+```bash
 - sudo apt-get install ansible git -y
 - sudo ansible-galaxy collection install community.postgresql
-
 ```
-sudo apt-get install -y ansible
-```
-
 
 Steps to run:
 

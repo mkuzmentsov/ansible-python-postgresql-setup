@@ -1,0 +1,36 @@
+- name: Update package cache
+  ansible.builtin.package:
+    update_cache: true
+
+- name: Upgrade OS packages
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+    update_cache: yes
+
+- name: Install dependencies
+  ansible.builtin.apt:
+    name:
+      - git
+      - gcc
+      - make
+      - tar
+      - vim
+      - wget
+      - libncursesw5-dev
+      - libssl-dev
+      - libsqlite3-dev
+      - tk-dev
+      - libgdbm-dev
+      - libc6-dev
+      - libbz2-dev
+      - libffi-dev
+      - zlib1g-dev
+      - build-essential
+      - liblzma-dev
+      - tcl-dev
+    state: present
+    update_cache: yes
+  become: true
+  retries: 3
+  delay: 3

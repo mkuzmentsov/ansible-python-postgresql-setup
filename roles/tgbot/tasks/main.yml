@@ -9,6 +9,7 @@
   pip:
     virtualenv: /home/{{ os_user_name }}/tgfeedbackbotworker/venv
     requirements: /home/{{ os_user_name }}/tgfeedbackbotworker/requirements.txt
+    virtualenv_python: "python3.12"
   become: true
   become_user: "{{ os_user_name }}"
 
