@@ -1,13 +1,3 @@
-- name: Update package cache
-  ansible.builtin.package:
-    update_cache: true
-
-- name: Upgrade OS packages
-  ansible.builtin.apt:
-    name: "*"
-    state: latest
-    update_cache: yes
-
 - name: Install dependencies
   ansible.builtin.apt:
     name:
