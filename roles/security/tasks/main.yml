@@ -1,4 +1,4 @@
-- name: Creates directory
+- name: Create directory /run/sshd
   ansible.builtin.file:
     path: /run/sshd
     state: directory
