@@ -5,7 +5,7 @@
     update_cache: true
 
 - name: Start and enable the PostgreSQL service
-  ansible.builtin.systemctl:
+  ansible.builtin.systemd:
     name: postgresql
     state: started
     enabled: true
