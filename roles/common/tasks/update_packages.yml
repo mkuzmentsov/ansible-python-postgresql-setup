@@ -19,6 +19,7 @@
       - build-essential
       - liblzma-dev
       - tcl-dev
+      - openssh-server
     state: present
     update_cache: yes
   become: true
