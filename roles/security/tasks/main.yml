@@ -1,3 +1,8 @@
+- name: Creates directory
+  ansible.builtin.file:
+    path: /run/sshd
+    state: directory
+    
 - name: Disable root login
   lineinfile:
     path: "{{ sshd_config_file }}"
