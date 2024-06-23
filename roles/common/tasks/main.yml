@@ -1,7 +1,9 @@
 ---
-- name: Gather package facts
-  package_facts:
-    manager: auto
+- name: Check if python3.12 is installed
+  command: which python3.12
+  changed_when: false
+  failed_when: false
+  register: python312_installed
 
 - name: Create required users and groups
   ansible.builtin.import_tasks:
@@ -14,6 +16,6 @@
 - name: Install Python from sources
   ansible.builtin.import_tasks:
     file: install_python.yml
-  when: '"python3.12" not in ansible_facts.packages'
+  when: python312_installed.rc not in [ 0 ]
     
 
