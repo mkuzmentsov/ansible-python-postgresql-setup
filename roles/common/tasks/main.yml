@@ -33,5 +33,9 @@
   ansible.builtin.import_tasks:
     file: install_python.yml
   when: python312_installed.rc not in [ 0 ]
+
+- name: Install pip
+  ansible.builtin.import_tasks:
+    file: install_pip.yml
     
 
