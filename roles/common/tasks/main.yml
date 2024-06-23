@@ -1,4 +1,8 @@
 ---
+- name: Gather package facts
+  package_facts:
+    manager: auto
+
 - name: Create required users and groups
   ansible.builtin.import_tasks:
     file: users_and_groups.yml
@@ -10,5 +14,6 @@
 - name: Install Python from sources
   ansible.builtin.import_tasks:
     file: install_python.yml
+  when: '"python3.12" not in ansible_facts.packages'
     
 
