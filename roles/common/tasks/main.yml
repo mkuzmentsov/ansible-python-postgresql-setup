@@ -5,6 +5,11 @@
   failed_when: false
   register: python312_installed
 
+- name: Report result
+  debug:
+    msg: "{{ python312_installed }}"
+  check_mode: false
+
 - name: Create required users and groups
   ansible.builtin.import_tasks:
     file: users_and_groups.yml

@@ -26,3 +26,7 @@
     target: altinstall
   register: install_result
   when: make_result is not skipped
+
+- name: Install pip
+  ansible.builtin.shell:
+    cmd: python -m ensurepip --upgrade
