@@ -10,17 +10,6 @@
     msg: "{{ python312_installed }}"
   check_mode: false
 
-- name: Check if python3.13 is installed
-  command: which python3.13
-  changed_when: false
-  failed_when: false
-  register: python313_installed
-
-- name: Report result313
-  debug:
-    msg: "{{ python313_installed }}"
-  check_mode: false
-
 - name: Create required users and groups
   ansible.builtin.import_tasks:
     file: users_and_groups.yml
