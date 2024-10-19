@@ -8,17 +8,17 @@
     - tgbot2
   vars_prompt:
   - name: "tg_bot_token1"
-    prompt: "TG_BOT_TOKEN"
+    prompt: "TG_BOT_TOKEN1"
     private: yes
   - name: "tg_forward_group_id1"
-    prompt: "TG_FORWARD_GROUP_ID"
+    prompt: "TG_FORWARD_GROUP_ID1"
     private: yes
   - name: "postgresql_user_password"
     prompt: "Create a new password for user to use"
     private: yes
   - name: "tg_bot_token2"
-    prompt: "TG_BOT_TOKEN"
+    prompt: "TG_BOT_TOKEN2"
     private: yes
   - name: "tg_forward_group_id2"
-    prompt: "TG_FORWARD_GROUP_ID"
+    prompt: "TG_FORWARD_GROUP_ID2"
     private: yes
