@@ -4,14 +4,21 @@
     - common
     - security
     - db
-    - tgbot
+    - tgbot1
+    - tgbot12
   vars_prompt:
-  - name: "tg_bot_token"
+  - name: "tg_bot_token1"
     prompt: "TG_BOT_TOKEN"
     private: yes
-  - name: "tg_forward_group_id"
+  - name: "tg_forward_group_id1"
     prompt: "TG_FORWARD_GROUP_ID"
     private: yes
   - name: "postgresql_user_password"
     prompt: "Create a new password for user to use"
+    private: yes
+  - name: "tg_bot_token2"
+    prompt: "TG_BOT_TOKEN"
+    private: yes
+  - name: "tg_forward_group_id2"
+    prompt: "TG_FORWARD_GROUP_ID"
     private: yes

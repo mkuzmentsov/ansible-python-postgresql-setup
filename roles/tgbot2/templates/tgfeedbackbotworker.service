@@ -1,0 +1,17 @@
+[Unit]
+Description=Telegram Feedback Bot 2 Service
+Documentation="Ooops, no docs"
+After=network.target
+
+[Service]
+Type=simple
+User={{ os_user_name }}
+WorkingDirectory=/home/{{ os_user_name }}/tgfeedbackbotworker
+EnvironmentFile=/etc/sysconfig/tgfeedbackbotworker2
+ExecStart=/home/{{ os_user_name }}/tgfeedbackbotworker/venv/bin/python3 /home/{{ os_user_name }}/tgfeedbackbotworker/main.py
+StandardOutput=append:/var/log/tgfeedbackbotworker2/out.log
+StandardError=append:/var/log/tgfeedbackbotworker2/error.log
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

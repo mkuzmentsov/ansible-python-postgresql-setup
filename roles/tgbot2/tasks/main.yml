@@ -18,18 +18,21 @@
     path: /etc/sysconfig
     state: directory
 
-- name: Ensure directory /var/log/tgfeedbackbotworker exists
+- name: Ensure directory /var/log/tgfeedbackbotworker2 exists
   file:
-    path: /var/log/tgfeedbackbotworker
+    path: /var/log/tgfeedbackbotworker2
     state: directory  
     
 - name: TG Bot | Create environment file
-  template: src=tgfeedbackbotworker.env dest=/etc/sysconfig/tgfeedbackbotworker
+  template: 
+    src: tgfeedbackbotworker.env 
+    dest: /etc/sysconfig/tgfeedbackbotworker2
+    force: no
 
 - name: TG Bot  | Create Unit file
-  template: src=tgfeedbackbotworker.service dest=/lib/systemd/system/tgfeedbackbotworker.service mode=644
+  template: src=tgfeedbackbotworker.service dest=/lib/systemd/system/tgfeedbackbotworker2.service mode=644
   notify:
     - Reload systemctl
 
 - name: TG Bot  | Start service
-  service: name=tgfeedbackbotworker.service state=stopped enabled=yes
+  service: name=tgfeedbackbotworker2.service state=stopped enabled=yes
