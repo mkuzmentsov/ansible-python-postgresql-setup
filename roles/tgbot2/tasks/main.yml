@@ -34,5 +34,5 @@
   notify:
     - Reload systemctl
 
-- name: TG Bot  | Start service
+- name: TG Bot  | Stop service
   service: name=tgfeedbackbotworker2.service state=stopped enabled=yes
