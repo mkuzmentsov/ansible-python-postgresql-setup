@@ -5,7 +5,7 @@
     - security
     - db
     - tgbot1
-    - tgbot12
+    - tgbot2
   vars_prompt:
   - name: "tg_bot_token1"
     prompt: "TG_BOT_TOKEN"
